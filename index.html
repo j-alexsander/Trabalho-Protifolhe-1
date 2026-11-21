@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CorredorDev | Corrida de rua, treino e código</title>
+  <meta name="description" content="Portfólio de Jorge Alexsander, corredor de rua e estudante de Ciência da Computação: modalidades de 5 km à maratona, dicas de treino e performance, calculadora de pace e diário de treinos.">
+  <meta name="author" content="Jorge Alexsander">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="CorredorDev | Corrida de rua, treino e código">
+  <meta property="og:description" content="Modalidades de 5 km à maratona, dicas de treino, calculadora de pace e o diário de treinos de um corredor que também programa.">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body id="topo">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M8 16 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5h.01"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M3.5 18a9.5 9.5 0 1 1 17 0"/><path d="m12 14 4.5-5"/></symbol>
+    <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 21.5a6.5 6.5 0 0 0 6.5-6.5c0-2-1-3.7-2.8-5.2C14 8.4 12.8 6.2 12 3.5 11.2 6.2 10 8.4 8.3 9.8 6.5 11.3 5.5 13 5.5 15a6.5 6.5 0 0 0 6.5 6.5Z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4.5L17 13H5"/></symbol>
+    
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5Z"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 24 24"><path d="M7 2h4l1.2 6.2-3.4 1.4L7 2Zm10 0h-4l-1.2 6.2 3.4 1.4L17 2Z" opacity=".55"/><circle cx="12" cy="15.5" r="6.5"/></symbol>
+  </svg>
+
+
+  <header class="site-header" data-header>
+   
+    <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+
+    <div class="container site-header__inner">
+      <a class="brand" href="#inicio" aria-label="CorredorDev, voltar ao início">Corredor<span>Dev</span></a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu" data-nav-toggle>
+        <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Principal" data-nav>
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#modalidades">Modalidades</a></li>
+          <li><a class="nav__link" href="#dicas">Dicas</a></li>
+          <li><a class="nav__link" href="#calculadora">Calculadora</a></li>
+          <li><a class="nav__link" href="#treinos">Treinos</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre mim</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-titulo">
+            <span class="hero__line">Corra.</span>
+            <span class="hero__line hero__line--outline">Corra.</span>
+            <span class="hero__line hero__line--accent">Code.</span>
+          </h1>
+          <p class="hero__lead">A cada quilômetro, você não está apenas vencendo a distância, está superando quem você era ontem.</p>
+          <p class="hero__note">Superação, cadência e resistência: o que eu levo da rua para o código.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#modalidades">Ver as modalidades</a>
+            <a class="btn btn--outline" href="#calculadora">Calcular meu ritmo</a>
+          </div>
+        </div>
+
+        <figure class="hero__figure">
+          <img class="hero__photo" src="images/hero-corrida.jpg" width="495" height="795"
+               alt="Jorge correndo em uma prova de rua ao pôr do sol, com o polegar para cima" fetchpriority="high" decoding="async">
+          <figcaption class="hero__badge">
+            <svg class="icon icon--fill" aria-hidden="true"><use href="#i-flame"/></svg>
+            
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="records">
+        <h2 class="sr-only" id="records-titulo">Provas conquistadas</h2>
+        <ul class="container records__list" aria-labelledby="records-titulo">
+          <li class="record record--5k">
+            <span class="record__time">28:03</span>
+            <span class="record__dist">5&nbsp;km</span>
+            <span class="record__pace"><span class="sr-only">pace </span>5:37 /km</span>
+          </li>
+          <li class="record record--10k">
+            <span class="record__time">46:35</span>
+            <span class="record__dist">10&nbsp;km</span>
+            <span class="record__pace"><span class="sr-only">pace </span>4:40 /km</span>
+          </li>
+          <li class="record record--21k">
+            <span class="record__time">1h42</span>
+            <span class="record__dist">Meia maratona</span>
+            <span class="record__pace"><span class="sr-only">pace </span>4:50 /km</span>
+          </li>
+          <li class="record record--42k">
+            <span class="record__time">3h35</span>
+            <span class="record__dist">Maratona</span>
+            <span class="record__pace"><span class="sr-only">pace </span>5:06 /km</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="modalidades" class="section" aria-labelledby="modalidades-titulo">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="modalidades-titulo">Quatro modalidades</h2>
+          <p class="section__lead">Escolha a prova e veja o foco de treino, a zona de esforço e a estratégia de cada distância.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filtrar modalidades por distância" data-filters>
+          <button class="chip is-active" type="button" data-filter="todas" aria-pressed="true">Todas</button>
+          <button class="chip" type="button" data-filter="5k" aria-pressed="false">5&nbsp;km</button>
+          <button class="chip" type="button" data-filter="10k" aria-pressed="false">10&nbsp;km</button>
+          <button class="chip" type="button" data-filter="21k" aria-pressed="false">21,097&nbsp;km</button>
+          <button class="chip" type="button" data-filter="42k" aria-pressed="false">42,195&nbsp;km</button>
+        </div>
+        <p class="sr-only" role="status" data-filter-status></p>
+
+        <div class="races">
+
+          <article class="race race--5k" data-distance="5k" aria-labelledby="race-5k-titulo">
+            <span class="race__icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span>
+            <h3 class="race__title" id="race-5k-titulo">Corrida de 5&nbsp;km</h3>
+            <p class="race__km" aria-hidden="true">5<span>km</span></p>
+            <p class="race__desc">Porta de entrada para iniciantes e ótima para treinos de velocidade e ritmo (pace).</p>
+            <dl class="specs">
+              <div class="spec"><dt>Foco de treino</dt><dd>Velocidade e VO<sub>2</sub>máx, com tiros curtos e intervalados.</dd></div>
+              <div class="spec"><dt>Zona de esforço</dt><dd>Z5, muito forte: cerca de 92 a 97% da <abbr title="Frequência cardíaca máxima">FCmáx</abbr>.</dd></div>
+              <div class="spec"><dt>Ritmo alvo</dt><dd><abbr title="Percepção subjetiva de esforço">PSE</abbr> 9 de 10: o mais forte que você sustenta por 20 a 30 minutos.</dd></div>
+            </dl>
+            <details class="tip" open>
+              <summary>Dica de prova<svg class="icon tip__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="tip__body">
+                <p>Para quem está começando a treinar para os 5 km
+O maior erro de quem inicia é tentar correr rápido demais logo nas primeiras semanas, o que gera lesões por impacto e frustração cardiorrespiratória.
+
+Alterne corrida e caminhada: Não tente correr 5 km direto no primeiro dia. Comece alternando blocos ex.: 2 minutos de trote leve por 2 minutos de caminhada rápida durante 25 a 30 minutos, 3 vezes na semana. Aumente o tempo de corrida e reduza o de caminhada progressivamente a cada semana.
+
+Corra em ritmo conversacional (Zona 2): O treino de base deve ser feito em uma intensidade onde você consiga falar frases curtas sem ficar completamente ofegante. Se não consegue falar, diminua o passo mesmo que pareça lento demais.
+
+Respeite os dias de descanso: O músculo se adapta ao impacto e ganha resistência no repouso, não durante o treino. Evite correr em dias consecutivos no início; intercale com descanso ou fortalecimento.
+
+Invista no fortalecimento básico: Dedique 1 a 2 sessões na semana para fortalecer panturrilhas, quadríceps, glúteos e core pranchas, agachamentos, elevação de panturrilha. Isso protege joelhos e canelas evitando a temida canelite.
+
+Priorize conforto no calçado: Use um tênis de corrida específico, com bom amortecimento e um número ou meio número maior que o seu calçado casual, pois os pés incham durante a corrida.</p>
+                <p>Treino-chave: 6 &times; 800&nbsp;m no ritmo de 5&nbsp;km, com 400&nbsp;m de trote entre os tiros.</p>
+                <a class="text-link" href="#calculadora" data-calc-km="5">Calcular meu ritmo para 5&nbsp;km</a>
+              </div>
+            </details>
+          </article>
+
+          <article class="race race--10k" data-distance="10k" aria-labelledby="race-10k-titulo">
+            <span class="race__icon" aria-hidden="true"><svg class="icon"><use href="#i-gauge"/></svg></span>
+            <h3 class="race__title" id="race-10k-titulo">Corrida de 10&nbsp;km</h3>
+            <p class="race__km" aria-hidden="true">10<span>km</span></p>
+            <p class="race__desc">Distância clássica intermediária: exige mais resistência aeróbica e estratégia de prova.</p>
+            <dl class="specs">
+              <div class="spec"><dt>Foco de treino</dt><dd>Resistência aeróbica e treino de limiar.</dd></div>
+              <div class="spec"><dt>Zona de esforço</dt><dd>Z4 a Z5, forte: cerca de 88 a 93% da <abbr title="Frequência cardíaca máxima">FC&nbsp;máx</abbr>.</dd></div>
+              <div class="spec"><dt>Ritmo alvo</dt><dd><abbr title="Percepção subjetiva de esforço">PSE</abbr> 8 a 9: duro, mas controlado. Só dá para falar palavras soltas.</dd></div>
+            </dl>
+            <details class="tip">
+              <summary>Dica de prova<svg class="icon tip__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="tip__body">
+                <p>Para quem está começando a correr os 10k (Treinos)
+Aumente o volume com calma (Regra dos 10%): Nunca suba sua quilometragem semanal mais do que 10% de uma semana para outra. Se você corre 15 km na semana, na próxima mire no máximo em 16,5 km. O sistema cardiovascular evolui rápido, mas tendões e articulações precisam de tempo para se adaptar.
+
+Respeite o "Longão" em Zona 2: Faça um treino mais longo por semana em ritmo bem confortável onde você consiga conversar sem perder o fôlego. Não tente bater recorde de velocidade nesse dia; o objetivo é ensinar o corpo a ficar mais tempo em movimento e usar gordura como fonte de energia.
+
+Fortaleça a base especialmente posterior e core: Nos 10 km, a fadiga postural começa a aparecer depois dos 6 ou 7 km. Priorize exercícios unilaterais afundo, agachamento búlgaro, panturrilhas, glúteos e abdômen para manter a mecânica de corrida limpa até o final.
+
+Varie os estímulos: Não corra todos os treinos no mesmo ritmo moderado. Alterne dias leves de rodagem com um dia de treino intervalado tiros curtos ou fartlek brincadeira de velocidades para ganhar eficiência biomecânica.
+
+Para quem vai fazer uma prova de 10k Estratégia de Corrida
+Divida a prova em três blocos (3-4-3):
+
+Primeiros 3 km Controle: A adrenalina da largada vai te puxar para um ritmo forte demais. Segure o passo e corra ligeiramente mais lento que o seu ritmo alvo.
+
+Km 4 ao 7 Cruzeiro: Encaixe o seu ritmo planejado, foque na respiração e mantenha a postura relaxada ombros baixos, braços soltos.
+
+Últimos 3 km Progressão: Se sobrou energia, é aqui que você acelera gradualmente até cruzar a linha de chegada.
+
+Teste a hidratação e o carboidrato antes: Provas de 10 km costumam durar entre 45 e 70 minutos. Embora não seja estritamente obrigatório suplementar durante a prova, tomar 1 gel de carboidrato por volta dos 30–35 minutos ajuda a evitar a queda de rendimento na reta final. Nunca estreie um gel ou tênis no dia da prova.
+
+Não pule os postos de hidratação: Mesmo que não sinta sede, pegue o copo de água. Dê um ou dois goles pequenos para molhar a boca e refrescar o corpo; beber muito de uma vez pesa no estômago e causa desconforto abdominal.
+
+Faça o polimento taper: Nos 4 a 5 dias que antecedem a prova, reduza o volume dos treinos em cerca de 40% a 50% e corte treinos de perna pesados na academia. Você precisa chegar na largada com os estoques de glicogênio cheios e a musculatura descansada.
+
+Aqueça antes da largada: Como o ritmo de prova é mais intenso que o de treino, faça 10 minutos de trote bem leve e alguns educativos (skipping, mobilidade de quadril) 15 minutos antes do tiro de largada para preparar o coração e evitar aquela sensação de "pernas pesadas" no primeiro quilômetro.</p>
+                <a class="text-link" href="#calculadora" data-calc-km="10">Calcular meu ritmo para 10&nbsp;km</a>
+              </div>
+            </details>
+          </article>
+
+          <article class="race race--21k" data-distance="21k" aria-labelledby="race-21k-titulo">
+            <span class="race__icon" aria-hidden="true"><svg class="icon"><use href="#i-droplet"/></svg></span>
+            <h3 class="race__title" id="race-21k-titulo">Corrida de 21,097&nbsp;km</h3>
+            <p class="race__km" aria-hidden="true">21<span>km</span></p>
+            <p class="race__desc">Meia maratona: exige planejamento de hidratação e reposição de carboidratos.</p>
+            <dl class="specs">
+              <div class="spec"><dt>Foco de treino</dt><dd>Resistência específica, com longões e tempo runs de 30 a 60 minutos.</dd></div>
+              <div class="spec"><dt>Zona de esforço</dt><dd>Z4, forte e sustentado: cerca de 84 a 90% da <abbr title="Frequência cardíaca máxima">FC&nbsp;máx</abbr>.</dd></div>
+              <div class="spec"><dt>Ritmo alvo</dt><dd><abbr title="Percepção subjetiva de esforço">PSE</abbr> 7 a 8: firme, com frases curtas. Segure no início e aperte na segunda metade.</dd></div>
+            </dl>
+            <details class="tip">
+              <summary>Dica de prova<svg class="icon tip__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="tip__body">
+                <p>Correr uma meia maratona (21,1 km) exige uma transição de mentalidade: você deixa de depender apenas do fôlego e passa a gerenciar glicogênio, resistência muscular e disciplina de ritmo.
+
+Para quem está começando a treinar para os 21k
+Domine o "longão" em Zona 2: O treino mais importante da semana é a rodagem longa, feita em ritmo confortável onde você consegue conversar sem ofegar. Aumente a distância gradualmente máximo de 10% por semana até chegar a 16 km ou 18 km cerca de 2 a 3 semanas antes da prova. Você não precisa correr 21 km nos treinos para completar a prova.
+
+Treine a suplementação intra-treino: Acima de 75–90 minutos de corrida, os estoques de carboidrato do corpo caem drasticamente. Use os longões acima de 12 km para testar géis de carboidrato, jujubas ou isotônicos, descobrindo o que seu estômago tolera bem em movimento.
+
+Fortalecimento é inegociável: O impacto acumulado de mais de duas horas correndo cobra caro das articulações e tendões. Mantenha 2 a 3 sessões semanais de força focadas em quadríceps, posteriores, glúteos, panturrilhas e core para evitar canelite, fascite plantar e dores no joelho.
+
+Varie os estímulos na semana: Não faça todos os treinos no mesmo ritmo. Combine o longão leve com 1 treino de tiro/intervalado para melhorar a economia de corrida e 1 treino de tempo run ritmo contínuo moderadamente forte, próximo ao ritmo alvo da prova.
+
+Respeite o polimento (taper): Nas duas semanas finais antes da prova, reduza o volume total de quilômetros em 30% a 50%, mantendo apenas estímulos curtos para deixar as pernas descansadas e cheias de energia.
+
+Para o dia da prova de 21k
+Divida a prova em blocos (Estratégia 10 - 6 - 5):
+
+Km 1 ao 10: Segure o freio. A adrenalina da largada engana e faz você correr rápido demais. Corra 5 a 10 segundos por km mais devagar que seu ritmo alvo.
+
+Km 11 ao 16: Encontre seu ritmo de cruzeiro. É o trecho mentalmente mais duro; mantenha a postura e a cadência.
+
+Km 17 ao 21,1: Se sobrou perna, agora é a hora de acelerar progressivamente e buscar o tempo final.
+
+Protocolo de hidratação e carboidrato:
+
+Tome o primeiro gel de carboidrato por volta dos 35–40 minutos antes de sentir cansaço e repita a cada 30–35 minutos geralmente 2 a 3 géis na prova toda, sempre acompanhado de água nunca de isotônico, para não sobrecarregar o estômago.
+
+Não pule postos de hidratação, mesmo sem sede. Beba pequenos goles nos primeiros quilômetros para evitar desidratação tardia.
+
+Prevenção contra atrito: Em 21 km, qualquer costura mal posicionada vira assadura ou bolha. Passe vaselina sólida ou creme anti-atrito nas coxas, axilas, mamilos e pés antes de sair de casa.
+
+Nada de estreias: Use exatamente o mesmo tênis já amaciado, meias, roupas e café da manhã que você testou nos seus melhores longões.
+
+Aquecimento curto: Como a prova é longa, você não precisa de um aquecimento exaustivo. Faça 5 a 8 minutos de trote bem leve e mobilidade articular (tornozelos e quadril) 15 minutos antes da largada.</p>
+                <a class="text-link" href="#calculadora" data-calc-km="21,0975">Calcular meu ritmo para 21,097&nbsp;km</a>
+              </div>
+            </details>
+          </article>
+
+          <article class="race race--42k" data-distance="42k" aria-labelledby="race-42k-titulo">
+            <span class="race__icon" aria-hidden="true"><svg class="icon"><use href="#i-flag"/></svg></span>
+            <h3 class="race__title" id="race-42k-titulo">Corrida de 42,195&nbsp;km</h3>
+            <p class="race__km" aria-hidden="true">42<span>km</span></p>
+            <p class="race__desc">Maratona: exige meses de preparação específica e controle rigoroso de energia.</p>
+            <dl class="specs">
+              <div class="spec"><dt>Foco de treino</dt><dd>Base aeróbica: volume semanal alto e longões progressivos de até 30 a 32&nbsp;km.</dd></div>
+              <div class="spec"><dt>Zona de esforço</dt><dd>Z3 a Z4, moderado a forte: cerca de 78 a 85% da <abbr title="Frequência cardíaca máxima">FC&nbsp;máx</abbr>.</dd></div>
+              <div class="spec"><dt>Ritmo alvo</dt><dd><abbr title="Percepção subjetiva de esforço">PSE</abbr> 6 a 7: conservador nos primeiros 30&nbsp;km. O resto se decide com a energia que sobrou.</dd></div>
+            </dl>
+            <details class="tip">
+              <summary>Dica de prova<svg class="icon tip__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="tip__body">
+                <p> maratona (42,195 km) muda completamente a lógica das distâncias anteriores. Enquanto até os 21 km você consegue "forçar" o corpo usando reservas imediatas, nos 42 km o jogo é gerenciamento de glicogênio, resistência muscular e disciplina mental.
+
+Para quem está começando a treinar para os 42k
+Base antes do volume específico: Antes de iniciar um ciclo específico de maratona (que dura de 16 a 20 semanas), tenha pelo menos 6 meses a 1 ano de consistência correndo 3 a 4 vezes na semana e já tendo completado uma meia maratona.
+
+O "Longão" sem exagero: O treino longo do fim de semana é o pilar da preparação, mas você não precisa correr 42 km nos treinos. O teto para iniciantes fica entre 30 km e 34 km, atingido cerca de 3 a 4 semanas antes da prova. Passar disso aumenta exponencialmente o risco de lesão sem trazer ganho fisiológico proporcional.
+
+Treine o estômago Gut Training: Nos longões acima de 1h30, teste exatamente os géis de carboidrato, isotônicos ou cápsulas de sal que vai usar no dia. O sistema digestivo precisa se adaptar a absorver carboidrato com o sangue desviado para as pernas.
+
+Fortalecimento é inegociável: O impacto repetitivo por 3, 4 ou 5 horas destrói a biomecânica de quem tem musculatura fraca. Foque em glúteos, quadríceps, panturrilhas e core (2x na semana) para evitar que o joelho ou o quadril cedam depois do km 30.
+
+Respeite o Polimento Tapering: Nas últimas 2 a 3 semanas antes da prova, reduza o volume semanal em 30% a 50%, mantendo apenas alguns estímulos curtos em ritmo de prova. É nesse descanso que a supercompensação acontece e o estoque de glicogênio enche.
+
+Estratégia para o dia da prova (42k)
+O segredo dos primeiros 10 km: A adrenalina da largada faz o ritmo parecer fácil demais. Segure o freio. Correr 10 a 15 segundos por quilômetro mais rápido que o seu ritmo-alvo no início vai cobrar um preço altíssimo depois do km 32 o famoso "muro" bonk, quando o glicogênio acaba e o corpo trava.
+
+Divida a prova em blocos mentais: Não pense nos 42 km na largada. Divida em três partes:
+
+Km 0 ao 21: Aquecimento controlado. Termine a primeira metade sentindo que poderia conversar tranquilamente.
+
+Km 21 ao 32: Fase de foco e ritmo constante. Mantenha a cadência e a postura.
+
+Km 32 ao 42,2: A maratona de verdade começa aqui. É onde você usa a reserva mental que guardou na primeira metade.
+
+Protocolo rígido de nutrição e hidratação: Não espere sentir sede ou fraqueza; quando o sintoma aparece, já é tarde demais. Consuma entre 45 g e 60 g de carboidrato por hora cerca de 1 gel a cada 35–40 minutos, sempre acompanhado de água e tome água em quase todos os postos de hidratação, mesmo que sejam apenas dois goles.
+
+Prevenção de atrito: O suor seco vira sal e lixa a pele. Passe vaselina sólida ou creme anti-atrito nos pés entre os dedos, virilha, axilas e mamilos ou use esparadrapo micropore nos mamilos.
+
+Nada novo no dia: Tênis, meia, bermuda, top/camiseta e suplementação devem ter sido testados em pelo menos dois treinos longos anteriores. Costuras novas viram bolhas e assaduras severas após 3 horas de corrida.
+
+Se você já tem alguma prova-alvo em mente ou um tempo estimado de conclusão, me conte para ajustarmos as faixas de ritmo e a conta exata de géis para o percurso.</p>
+                <a class="text-link" href="#calculadora" data-calc-km="42,195">Calcular meu ritmo para 42,195&nbsp;km</a>
+              </div>
+            </details>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="dicas" class="section" aria-labelledby="dicas-titulo">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="dicas-titulo">Dicas de treino e performance</h2>
+          <p class="section__lead">O que eu aplico na minha rotina e o que a ciência do esporte costuma recomendar para correr mais, com menos risco de lesão.</p>
+        </header>
+
+        <div class="tabs" role="tablist" aria-label="Tipo de dica" data-tabs>
+          <button class="tab" role="tab" type="button" id="tab-treino" aria-controls="painel-treino" aria-selected="true">Treino</button>
+          <button class="tab" role="tab" type="button" id="tab-performance" aria-controls="painel-performance" aria-selected="false" tabindex="-1">Performance</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="painel-treino" aria-labelledby="tab-treino" tabindex="0">
+          <ul class="tips">
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>80/20</strong><span>leve e forte</span></p>
+              <h3 class="tip-item__title">Corra devagar na maior parte do tempo</h3>
+              <p class="tip-item__text">Cerca de 80% dos treinos em ritmo leve, em que você consegue conversar, e só 20% em intensidade alta. Treinar sempre forte cansa e não rende.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>+10%</strong><span>por semana</span></p>
+              <h3 class="tip-item__title">Aumente a carga aos poucos</h3>
+              <p class="tip-item__text">Suba o volume semanal em torno de 10% e faça uma semana mais leve a cada três ou quatro, para o corpo absorver o treino.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>25&ndash;30%</strong><span>do volume semanal</span></p>
+              <h3 class="tip-item__title">Faça um longão por semana</h3>
+              <p class="tip-item__text">O treino mais longo constrói resistência, economia de energia e a confiança de que você aguenta a prova.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>5&ndash;10</strong><span>minutos de aquecimento</span></p>
+              <h3 class="tip-item__title">Aqueça antes, desacelere depois</h3>
+              <p class="tip-item__text">Caminhada ou trote leve e alguns educativos preparam as articulações. Ao final, 5 minutos leves ajudam a recuperação.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>2&times;</strong><span>por semana</span></p>
+              <h3 class="tip-item__title">Inclua treino de força</h3>
+              <p class="tip-item__text">Agachamento, afundo, panturrilha, glúteos e prancha reduzem o risco de lesão e melhoram a economia de corrida.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>170</strong><span>passos por minuto</span></p>
+              <h3 class="tip-item__title">Cuide da cadência</h3>
+              <p class="tip-item__text">Muitos corredores rendem bem entre 165 e 180 passos por minuto. Passadas curtas, com o pé caindo sob o quadril, reduzem o impacto.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="painel-performance" aria-labelledby="tab-performance" tabindex="0">
+          <ul class="tips">
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>20&ndash;40</strong><span>minutos no limiar</span></p>
+              <h3 class="tip-item__title">Treine no limiar</h3>
+              <p class="tip-item__text">Esforço 7 a 8 de 10, &ldquo;confortavelmente difícil&rdquo;: dá para falar frases curtas. Eleva o ritmo que você consegue sustentar em prova.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>3&ndash;5</strong><span>minutos por tiro</span></p>
+              <h3 class="tip-item__title">Faça intervalados de VO<sub>2</sub>máx</h3>
+              <p class="tip-item__text">Repetições como 5 &times; 1.000&nbsp;m no ritmo de 3 a 5&nbsp;km, com trote de recuperação, aumentam seu teto aeróbico. Uma vez por semana basta.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>5&ndash;10</strong><span>s/km mais lento no início</span></p>
+              <h3 class="tip-item__title">Prove com negative split</h3>
+              <p class="tip-item__text">Comece um pouco abaixo do ritmo alvo e termine a segunda metade igual ou mais rápida. Quem larga forte demais paga nos últimos quilômetros.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>30&ndash;60</strong><span>g de carboidrato por hora</span></p>
+              <h3 class="tip-item__title">Planeje combustível e hidratação</h3>
+              <p class="tip-item__text">Em provas acima de 60 a 75 minutos, treine a ingestão de carboidrato e beba conforme a sede. Teste tudo nos longões: nada novo no dia da prova.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>7&ndash;9</strong><span>horas de sono</span></p>
+              <h3 class="tip-item__title">Recupere de verdade</h3>
+              <p class="tip-item__text">A evolução acontece no descanso. Alterne dias fortes e leves, durma bem e respeite as semanas de descarga para evitar o excesso de treino.</p>
+            </li>
+            <li class="tip-item">
+              <p class="tip-item__figure"><strong>30&ndash;50%</strong><span>menos volume no polimento</span></p>
+              <h3 class="tip-item__title">Faça o polimento (taper)</h3>
+              <p class="tip-item__text">Nas 1 a 3 semanas antes da prova, reduza o volume e mantenha alguns estímulos curtos de ritmo. Você chega descansado, não destreinado.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <article class="panel" aria-labelledby="semana-titulo">
+            <h3 class="panel__title" id="semana-titulo">Semana modelo</h3>
+            <p class="panel__sub">Exemplo para quem treina quatro vezes por semana. Ajuste ao seu nível.</p>
+            <ol class="week">
+              <li class="week__day week__day--forca"><abbr class="week__name" title="Segunda-feira">Seg</abbr><span class="week__what">Força: parte superior e core</span></li>
+              <li class="week__day week__day--intervalado"><abbr class="week__name" title="Terça-feira">Ter</abbr><span class="week__what">Intervalado: 6 &times; 800&nbsp;m</span></li>
+              <li class="week__day week__day--leve"><abbr class="week__name" title="Quarta-feira">Qua</abbr><span class="week__what">Rodagem leve de 30 a 40 minutos</span></li>
+              <li class="week__day week__day--tempo"><abbr class="week__name" title="Quinta-feira">Qui</abbr><span class="week__what">Tempo run: 20 a 30 minutos no limiar</span></li>
+              <li class="week__day week__day--forca"><abbr class="week__name" title="Sexta-feira">Sex</abbr><span class="week__what">Força: pernas e glúteos</span></li>
+              <li class="week__day week__day--descanso"><abbr class="week__name" title="Sábado">Sáb</abbr><span class="week__what">Descanso ou mobilidade</span></li>
+              <li class="week__day week__day--longao"><abbr class="week__name" title="Domingo">Dom</abbr><span class="week__what">Longão em ritmo leve</span></li>
+            </ol>
+          </article>
+
+          <article class="panel" aria-labelledby="zonas-titulo">
+            <h3 class="panel__title" id="zonas-titulo">Zonas de esforço</h3>
+            <p class="panel__sub">Percentual da frequência cardíaca máxima (FC máx) e percepção subjetiva de esforço (PSE, de 1 a 10).</p>
+            <table class="zones">
+              <thead>
+                <tr><th scope="col">Zona</th><th scope="col">Faixa da FC máx</th><th scope="col">Sensação</th></tr>
+              </thead>
+              <tbody>
+                <tr class="zone zone--1"><th scope="row">Z1</th><td><span class="zone__bar" aria-hidden="true"></span><span class="zone__range">50&ndash;60%</span></td><td>Recuperação. PSE&nbsp;1&ndash;2</td></tr>
+                <tr class="zone zone--2"><th scope="row">Z2</th><td><span class="zone__bar" aria-hidden="true"></span><span class="zone__range">60&ndash;70%</span></td><td>Leve, dá para conversar. PSE&nbsp;3&ndash;4</td></tr>
+                <tr class="zone zone--3"><th scope="row">Z3</th><td><span class="zone__bar" aria-hidden="true"></span><span class="zone__range">70&ndash;80%</span></td><td>Moderada, frases completas. PSE&nbsp;5&ndash;6</td></tr>
+                <tr class="zone zone--4"><th scope="row">Z4</th><td><span class="zone__bar" aria-hidden="true"></span><span class="zone__range">80&ndash;90%</span></td><td>Limiar, frases curtas. PSE&nbsp;7&ndash;8</td></tr>
+                <tr class="zone zone--5"><th scope="row">Z5</th><td><span class="zone__bar" aria-hidden="true"></span><span class="zone__range">90&ndash;100%</span></td><td>Máxima, palavras soltas. PSE&nbsp;9&ndash;10</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+
+        <p class="disclaimer">Conteúdo informativo, baseado em recomendações gerais. Para um plano individual, procure um profissional de educação física e avalie sua saúde antes de aumentar a carga.</p>
+      </div>
+    </section>
+    <section id="calculadora" class="section" aria-labelledby="calc-titulo">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="calc-titulo">Calculadora de ritmo</h2>
+          <p class="section__lead">Informe a distância e o tempo para ver seu pace, sua velocidade média e quanto tempo você levaria em outras provas.</p>
+        </header>
+
+        <div class="calc panel">
+          <form class="calc__form" id="form-calc" novalidate autocomplete="off">
+            <fieldset class="calc__group">
+              <legend class="calc__legend">Distância</legend>
+              <div class="chips" role="group" aria-label="Atalhos de distância">
+                <button class="chip chip--sm" type="button" data-dist="5">5&nbsp;km</button>
+                <button class="chip chip--sm" type="button" data-dist="10">10&nbsp;km</button>
+                <button class="chip chip--sm" type="button" data-dist="21,0975">21,097&nbsp;km</button>
+                <button class="chip chip--sm" type="button" data-dist="42,195">42,195&nbsp;km</button>
+              </div>
+              <div class="field">
+                <label class="field__label" for="calc-dist">Distância em quilômetros</label>
+                <div class="field__box">
+                  <input class="field__input" id="calc-dist" name="distancia" type="text" inputmode="decimal" placeholder="0" aria-describedby="calc-dist-erro">
+                  <span class="field__unit" aria-hidden="true">km</span>
+                </div>
+                <p class="field__msg" id="calc-dist-erro" data-error="dist"></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="calc__group">
+              <legend class="calc__legend">Tempo total</legend>
+              <div class="time-grid">
+                <div class="field">
+                  <label class="sr-only" for="calc-h">Horas</label>
+                  <div class="field__box">
+                    <input class="field__input" id="calc-h" name="horas" type="text" inputmode="numeric" maxlength="2" placeholder="0" aria-describedby="calc-tempo-erro">
+                    <span class="field__unit" aria-hidden="true">h</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="sr-only" for="calc-m">Minutos</label>
+                  <div class="field__box">
+                    <input class="field__input" id="calc-m" name="minutos" type="text" inputmode="numeric" maxlength="2" placeholder="0" aria-describedby="calc-tempo-erro">
+                    <span class="field__unit" aria-hidden="true">min</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="sr-only" for="calc-s">Segundos</label>
+                  <div class="field__box">
+                    <input class="field__input" id="calc-s" name="segundos" type="text" inputmode="numeric" maxlength="2" placeholder="0" aria-describedby="calc-tempo-erro">
+                    <span class="field__unit" aria-hidden="true">s</span>
+                  </div>
+                </div>
+              </div>
+              <p class="field__msg" id="calc-tempo-erro" data-error="tempo"></p>
+            </fieldset>
+
+            <div class="calc__actions">
+              <button class="btn btn--primary" type="submit">Calcular</button>
+              <button class="btn btn--ghost" type="reset">Limpar</button>
+            </div>
+          </form>
+
+          <div class="calc__result" data-result>
+            <div class="result-empty" data-result-empty>
+              <p class="result-empty__text">Informe a distância e o tempo para ver seu ritmo.</p>
+              <button class="text-button" type="button" data-calc-example>Usar exemplo: 5&nbsp;km em 28&nbsp;min 3&nbsp;s</button>
+            </div>
+
+            <div class="result-main" data-result-main hidden>
+              <div class="result-hero">
+                <p class="result-hero__main">
+                  <span class="result-hero__label">Pace médio</span>
+                  <span class="result-hero__value"><span data-out="pace">0:00</span><small>min/km</small></span>
+                </p>
+                <p class="result-hero__side">
+                  <span class="result-hero__label">Velocidade média</span>
+                  <span class="result-hero__speed"><span data-out="speed">0,0</span><small>km/h</small></span>
+                </p>
+              </div>
+
+              <h3 class="result-subtitle">Tempo estimado em outras provas</h3>
+              <ul class="proj">
+                <li class="proj__item proj__item--5k" data-proj="5k"><span class="proj__dist">5&nbsp;km</span><span class="proj__time" data-proj-time>0:00</span><span class="proj__pace" data-proj-pace>0:00 /km</span></li>
+                <li class="proj__item proj__item--10k" data-proj="10k"><span class="proj__dist">10&nbsp;km</span><span class="proj__time" data-proj-time>0:00</span><span class="proj__pace" data-proj-pace>0:00 /km</span></li>
+                <li class="proj__item proj__item--21k" data-proj="21k"><span class="proj__dist">21,097&nbsp;km</span><span class="proj__time" data-proj-time>0:00</span><span class="proj__pace" data-proj-pace>0:00 /km</span></li>
+                <li class="proj__item proj__item--42k" data-proj="42k"><span class="proj__dist">42,195&nbsp;km</span><span class="proj__time" data-proj-time>0:00</span><span class="proj__pace" data-proj-pace>0:00 /km</span></li>
+              </ul>
+
+              <label class="switch">
+                <input class="switch__input" type="checkbox" data-riegel>
+                <span class="switch__track" aria-hidden="true"></span>
+                <span class="switch__label">Considerar o cansaço (fórmula de Riegel)</span>
+              </label>
+              <p class="result-note" data-note>Projeção estimada: mantém o mesmo ritmo do início ao fim da prova.</p>
+
+              <details class="splits">
+                <summary>Parciais por quilômetro<svg class="icon tip__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                <div class="splits__body">
+                  <table class="splits__table">
+                    <thead><tr><th scope="col">Km</th><th scope="col">Tempo acumulado</th></tr></thead>
+                    <tbody data-splits></tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+
+            <p class="sr-only" role="status" data-result-live></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="treinos" class="section" aria-labelledby="treinos-titulo">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="treinos-titulo">Meus treinos</h2>
+          <p class="section__lead">Um retrato da minha rotina nas últimas semanas: corrida, força e constância.</p>
+        </header>
+
+        <div class="train-grid">
+          <article class="panel chart-panel" aria-labelledby="grafico-titulo">
+            <h3 class="panel__title" id="grafico-titulo">Últimas 12 semanas</h3>
+            <p class="panel__sub">Distância corrida por semana, em quilômetros (valores aproximados).</p>
+
+            <div class="chart" data-chart>
+              <p class="chart__readout" data-chart-readout aria-hidden="true"></p>
+              <!-- O gráfico é desenhado aqui pelo script.js. Setas do teclado trocam a semana. -->
+              <div class="chart__stage" data-chart-stage role="slider" tabindex="0"
+                   aria-label="Distância por semana. Use as setas para trocar de semana."
+                   aria-valuemin="0" aria-valuemax="11" aria-valuenow="11"></div>
+            </div>
+
+            <!-- Tabela com os mesmos dados: os valores nunca dependem do mouse -->
+            <details class="data-table">
+              <summary>Ver dados em tabela<svg class="icon tip__chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <table data-chart-data>
+                <caption class="sr-only">Distância corrida por semana</caption>
+                <thead><tr><th scope="col">Semana de</th><th scope="col">Distância</th></tr></thead>
+                <tbody>
+                  <tr data-inicio="2026-08-31" data-km="0"><th scope="row">31 ago</th><td>0 km</td></tr>
+                  <tr data-inicio="2026-09-07" data-km="5.1"><th scope="row">7 set</th><td>5 km</td></tr>
+                  <tr data-inicio="2026-09-14" data-km="0"><th scope="row">14 set</th><td>0 km</td></tr>
+                  <tr data-inicio="2026-09-21" data-km="0"><th scope="row">21 set</th><td>0 km</td></tr>
+                  <tr data-inicio="2026-09-28" data-km="0"><th scope="row">28 set</th><td>0 km</td></tr>
+                  <tr data-inicio="2026-10-05" data-km="4.1"><th scope="row">5 out</th><td>4 km</td></tr>
+                  <tr data-inicio="2026-10-12" data-km="3.4"><th scope="row">12 out</th><td>3 km</td></tr>
+                  <tr data-inicio="2026-10-19" data-km="0"><th scope="row">19 out</th><td>0 km</td></tr>
+                  <tr data-inicio="2026-10-26" data-km="0"><th scope="row">26 out</th><td>0 km</td></tr>
+                  <tr data-inicio="2026-11-02" data-km="15.1"><th scope="row">2 nov</th><td>15 km</td></tr>
+                  <tr data-inicio="2026-11-09" data-km="5"><th scope="row">9 nov</th><td>5 km</td></tr>
+                  <tr data-inicio="2026-11-16" data-km="6"><th scope="row">16 nov</th><td>6 km</td></tr>
+                </tbody>
+              </table>
+            </details>
+
+            <a class="btn btn--outline btn--block" href="https://www.strava.com/" data-social="strava" target="_blank" rel="noopener noreferrer">Veja mais do meu progresso<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </article>
+
+          <div class="train-side">
+            <article class="panel stat-panel" aria-labelledby="sequencia-titulo">
+              <h3 class="panel__title" id="sequencia-titulo">Sequência</h3>
+              <div class="streak">
+                <svg class="streak__flame" viewBox="0 0 64 76" aria-hidden="true" focusable="false">
+                  <path d="M34 1C37 14 55 22 55 47C55 62 45 74 32 74C19 74 9 63 9 49C9 38 15 30 21 24C21 31 24 35 28 36C28 24 27 11 34 1Z"/>
+                  <text x="32" y="61" text-anchor="middle">4</text>
+                </svg>
+                <p class="streak__label"><strong>4 semanas</strong> seguidas treinando</p>
+              </div>
+            </article>
+
+            <article class="panel stat-panel" aria-labelledby="controle-titulo">
+              <h3 class="panel__title" id="controle-titulo">Controle de treino</h3>
+              <dl class="load">
+                <div class="load__row">
+                  <dt>Esta semana</dt>
+                  <dd><strong>4 h 10 min</strong><span class="load__bar" aria-hidden="true"><span style="--value: 100%"></span></span></dd>
+                </div>
+                <div class="load__row">
+                  <dt>Semana passada</dt>
+                  <dd><strong>1 h 35 min</strong><span class="load__bar" aria-hidden="true"><span style="--value: 38%"></span></span></dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </div>
+
+        <div class="activities">
+          <!-- Corrida matinal -->
+          <article class="panel activity" aria-labelledby="corrida-titulo">
+            <h3 class="activity__title" id="corrida-titulo">Corrida matinal</h3>
+            <dl class="metrics">
+              <div class="metrics__item"><dt>Distância</dt><dd>10,03&nbsp;km</dd></div>
+              <div class="metrics__item"><dt>Ritmo</dt><dd>6:42 <small>/km</small></dd></div>
+              <div class="metrics__item">
+                <dt>Conquistas</dt>
+                <dd class="metrics__medals">
+                  <svg class="medal medal--gold" aria-hidden="true"><use href="#i-medal"/></svg>
+                  <svg class="medal medal--silver" aria-hidden="true"><use href="#i-medal"/></svg>
+                  3
+                </dd>
+              </div>
+            </dl>
+            <p class="achievement">
+              <svg class="achievement__medal" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#i-medal"/>
+                <text x="12" y="19" text-anchor="middle">2</text>
+              </svg>
+              <strong>Meu segundo melhor tempo nos 10&nbsp;km!</strong>
+            </p>
+          </article>
+
+          <!-- Musculação matinal -->
+          <article class="panel activity" aria-labelledby="forca-titulo">
+            <h3 class="activity__title" id="forca-titulo">Musculação matinal</h3>
+            <div class="activity__split">
+              <dl class="metrics metrics--stack">
+                <div class="metrics__item"><dt>Tempo</dt><dd>48min 4s</dd></div>
+                <div class="metrics__item"><dt>FC média</dt><dd>118 <small>bpm</small></dd></div>
+                <div class="metrics__item"><dt>Séries</dt><dd>24</dd></div>
+              </dl>
+              <figure class="muscles-figure">
+                <svg class="muscles" viewBox="0 0 260 256" role="img" aria-label="Mapa do corpo com peitoral, ombros e tríceps em destaque">
+                  <defs>
+                    <g id="corpo">
+                      <circle cx="64" cy="20" r="13"/>
+                      <rect x="58" y="31" width="12" height="9" rx="3"/>
+                      <path d="M34 46q0-6 8-7h44q8 1 8 7l-5 66q-1 8-11 10H50q-10-2-11-10z"/>
+                      <circle cx="17" cy="152" r="6"/><circle cx="111" cy="152" r="6"/>
+                      <ellipse cx="50" cy="247" rx="8" ry="4"/><ellipse cx="78" cy="247" rx="8" ry="4"/>
+                      <line class="m-arm" x1="28" y1="57" x2="22" y2="100"/>
+                      <line class="m-arm" x1="100" y1="57" x2="106" y2="100"/>
+                      <line class="m-fore" x1="22" y1="105" x2="18" y2="146"/>
+                      <line class="m-fore" x1="106" y1="105" x2="110" y2="146"/>
+                      <line class="m-thigh" x1="52" y1="126" x2="50" y2="184"/>
+                      <line class="m-thigh" x1="76" y1="126" x2="78" y2="184"/>
+                      <line class="m-shin" x1="50" y1="190" x2="50" y2="241"/>
+                      <line class="m-shin" x1="78" y1="190" x2="78" y2="241"/>
+                    </g>
+                  </defs>
+                  <use class="muscles__figure" href="#corpo"/>
+                  <use class="muscles__figure" href="#corpo" x="132"/>
+
+                  <g class="m-hot">
+                    <ellipse cx="51" cy="63" rx="13" ry="10"/><ellipse cx="77" cy="63" rx="13" ry="10"/>
+                    <circle cx="33" cy="52" r="9"/><circle cx="95" cy="52" r="9"/>
+                  </g>
+                  <g class="m-hot">
+                    <circle cx="165" cy="52" r="9"/><circle cx="227" cy="52" r="9"/>
+                    <line class="m-arm-hot" x1="160" y1="60" x2="154" y2="98"/>
+                    <line class="m-arm-hot" x1="232" y1="60" x2="238" y2="98"/>
+                  </g>
+                </svg>
+                <figcaption class="muscles-figure__caption">Peitoral, ombros e tríceps</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="sobre" class="section" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <div class="about">
+          <figure class="about__figure">
+            <img class="about__photo" src="images/sobre-mim.jpg" width="587" height="853" loading="lazy" decoding="async"
+                 alt="Jorge correndo de boné, camiseta branca e número 3638 no peito">
+          </figure>
+
+          <div class="about__body">
+            <h2 class="section__title" id="sobre-titulo">Sobre mim</h2>
+            <p class="about__intro">Sou <strong>Jorge Alexsander</strong>, estudante de Ciência da Computação e corredor amador. Código e esporte me ensinam o mesmo: disciplina, constância e evoluir um pouco a cada versão.</p>
+            <p>Este site junta os dois lados. A calculadora, o gráfico de treinos e o formulário foram escritos com HTML, CSS e JavaScript puros, sem frameworks.</p>
+
+            <h3 class="about__subtitle">Habilidades técnicas</h3>
+            <ul class="tags">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Linguagem C</li>
+              <li>Python</li>
+              <li>Lógica de programação</li>
+              <li>Inglês intermediário</li>
+            </ul>
+
+            <h3 class="about__subtitle">Provas conquistadas</h3>
+            <ul class="trophies">
+              <li class="trophy trophy--5k"><span class="trophy__time">28:03</span><span class="trophy__dist">5&nbsp;km</span><span class="trophy__pace">5:37 /km</span></li>
+              <li class="trophy trophy--10k"><span class="trophy__time">46:35</span><span class="trophy__dist">10&nbsp;km</span><span class="trophy__pace">4:40 /km</span></li>
+              <li class="trophy trophy--21k"><span class="trophy__time">1h42</span><span class="trophy__dist">21&nbsp;km</span><span class="trophy__pace">4:50 /km</span></li>
+              <li class="trophy trophy--42k"><span class="trophy__time">3h35</span><span class="trophy__dist">42&nbsp;km</span><span class="trophy__pace">5:06 /km</span></li>
+            </ul>
+
+            <h3 class="about__subtitle">Metas nas pistas</h3>
+            <ul class="goals">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg>Manter a constância: treinar toda semana (hoje, 4 semanas seguidas).</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg>Baixar meu tempo nos 10&nbsp;km e subir meu ritmo de limiar.</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg>Correr minha próxima meia maratona com negative split.</li>
+            </ul>
+
+            <h3 class="about__subtitle">Onde me encontrar</h3>
+            <ul class="social">
+              <li><a class="pill" href="https://github.com/j-alexsander" data-social="github" target="_blank" rel="noopener noreferrer">GitHub<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+              <li><a class="pill" href="https://www.linkedin.com/" data-social="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+              <li><a class="pill" href="https://www.strava.com/" data-social="strava" target="_blank" rel="noopener noreferrer">Strava<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projetos: mostram o lado dev -->
+        <div class="projects">
+          <h3 class="projects__title">Projetos em destaque</h3>
+          <ul class="projects__list">
+            <li class="project">
+              <h4 class="project__name">CorredorDev</h4>
+              <p class="project__text">Este portfólio: HTML semântico, CSS responsivo e JavaScript puro, publicado no GitHub Pages.</p>
+              <ul class="tags tags--sm"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+              <a class="text-link" href="https://github.com/" data-social="github" target="_blank" rel="noopener noreferrer">Ver código no GitHub<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+            </li>
+            <li class="project">
+              <h4 class="project__name">Calculadora de ritmo</h4>
+              <p class="project__text">Calcula pace e velocidade e projeta provas de 5km à maratona, com a fórmula de Riegel.</p>
+              <ul class="tags tags--sm"><li>JavaScript</li><li>Lógica de programação</li></ul>
+              <a class="text-link" href="#calculadora">Testar a calculadora</a>
+            </li>
+            <li class="project">
+              <h4 class="project__name">Gráfico de treinos</h4>
+              <p class="project__text">Gráfico de linha em SVG gerado por JavaScript, com mouse, teclado e tabela de dados.</p>
+              <ul class="tags tags--sm"><li>SVG</li><li>JavaScript</li></ul>
+              <a class="text-link" href="#treinos">Ver o gráfico</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section" aria-labelledby="contato-titulo">
+      <div class="container contact">
+        <div class="contact__intro">
+          <h2 class="section__title" id="contato-titulo">Vamos conversar?</h2>
+          <p class="section__lead">Dúvidas, parcerias ou dicas de treino? Envie uma mensagem.</p>
+          <figure class="contact__figure">
+            <img src="images/prova-numero-3638.jpg" width="580" height="787" loading="lazy" decoding="async"
+                 alt="Jorge em movimento durante uma prova de rua, com os dois pés fora do chão">
+          </figure>
+        </div>
+
+        <form class="form panel" id="form-contato" novalidate data-endpoint="">
+          <div class="field" data-field>
+            <label class="field__label" for="contato-nome">Nome</label>
+            <input class="field__input" id="contato-nome" name="name" type="text" autocomplete="name" maxlength="80" placeholder="Jorge Alexsander" required aria-describedby="contato-nome-msg">
+            <p class="field__msg" id="contato-nome-msg" data-msg></p>
+          </div>
+
+          <div class="field" data-field>
+            <label class="field__label" for="contato-email">E-mail</label>
+            <input class="field__input" id="contato-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="jorge@email.com" required aria-describedby="contato-email-msg">
+            <p class="field__msg" id="contato-email-msg" data-msg></p>
+          </div>
+
+          <div class="field" data-field>
+            <label class="field__label" for="contato-mensagem">Mensagem</label>
+            <textarea class="field__input field__input--area" id="contato-mensagem" name="message" rows="5" maxlength="500" placeholder="Oi, Jorge! Gostei do site..." required aria-describedby="contato-mensagem-msg contato-contador"></textarea>
+            <div class="field__foot">
+              <p class="field__msg" id="contato-mensagem-msg" data-msg></p>
+              <p class="counter" id="contato-contador" data-counter>0/500</p>
+            </div>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label>Não preencha este campo <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <button class="btn btn--primary btn--block" type="submit" data-submit>Enviar mensagem</button>
+          <div class="form__status" role="status" data-form-status hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__brand"><strong>CorredorDev</strong> de Jorge Alexsander</p>
+      <ul class="site-footer__links">
+        <li><a href="https://github.com/j-alexsander" data-social="github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="www.linkedin.com/in/jorge-alexsander-09921a319" data-social="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://strava.app.link/O5LtNFUHe8b" data-social="strava" target="_blank" rel="noopener noreferrer">Strava</a></li>
+        <li><a href="#topo">Voltar ao topo</a></li>
+      </ul>
+      <p class="site-footer__copy">&copy; <span data-year>2026</span> Jorge Alexsander. Feito com HTML, CSS e JavaScript.</p>
+    </div>
+  </footer>
+</body>
+</html>
